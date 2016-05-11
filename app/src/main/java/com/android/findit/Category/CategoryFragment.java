@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.findit.Constant;
 import com.android.findit.R;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.List;
  * Created by Hanani on 24/4/2016.
  */
 public class CategoryFragment extends Fragment {
-    private static final String ARG_SECTION_NUMBER = "section_number";
+
     private List<Category> categories;
 
     /**
@@ -27,7 +28,7 @@ public class CategoryFragment extends Fragment {
     public static CategoryFragment newInstance(int sectionNumber) {
         CategoryFragment fragment = new CategoryFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        args.putInt(Constant.ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }

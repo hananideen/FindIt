@@ -11,8 +11,6 @@ import android.widget.TextView;
  * Created by Hanani on 24/4/2016.
  */
 public class AboutFragment extends Fragment {
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
     /**
      * Returns a new instance of this fragment for the given section
      * number.
@@ -20,7 +18,7 @@ public class AboutFragment extends Fragment {
     public static AboutFragment newInstance(int sectionNumber) {
         AboutFragment fragment = new AboutFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        args.putInt(Constant.ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }

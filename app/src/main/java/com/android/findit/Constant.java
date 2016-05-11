@@ -5,5 +5,9 @@ package com.android.findit;
  */
 public class Constant {
 
+    //BUNDLE
     public static String CATEGORY = "category";
+
+    //FRAGMENT
+    public static final String ARG_SECTION_NUMBER = "section_number";
 }

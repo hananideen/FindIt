@@ -43,7 +43,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return "Map View";
             case 1:
-                return "List";
+                return "Categories";
             case 2:
                 return "About";
         }
