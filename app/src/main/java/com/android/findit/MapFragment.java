@@ -4,12 +4,17 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.EditText;
 
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdate;
@@ -27,6 +32,9 @@ public class MapFragment extends Fragment implements LocationListener{
     private MapView mapView;
     private GoogleMap map;
     private Location mLastLocation;
+
+    private TextInputLayout ilSearch;
+    private EditText etSearch;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -73,6 +81,14 @@ public class MapFragment extends Fragment implements LocationListener{
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(2.9234326,101.636846), 13);
         map.animateCamera(cameraUpdate);
 
+        //hide keyboard
+        getActivity().getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
+        );
+
+        ilSearch = (TextInputLayout) rootView.findViewById(R.id.ilSearch);
+        etSearch = (EditText) rootView.findViewById(R.id.etSearch);
+
         return rootView;
     }
 
@@ -94,6 +110,9 @@ public class MapFragment extends Fragment implements LocationListener{
         mapView.onLowMemory();
     }
 
+    /**
+     * to enable a permission for location checking
+     */
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     public boolean checkLocationPermission(){
         if (ContextCompat.checkSelfPermission(getActivity(),
@@ -126,6 +145,10 @@ public class MapFragment extends Fragment implements LocationListener{
         }
     }
 
+    /**
+     * used if current location is changing
+     * @param location
+     */
     @Override
     public void onLocationChanged(Location location)
     {
