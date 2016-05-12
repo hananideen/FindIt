@@ -1,5 +1,6 @@
 package com.android.findit;
 
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -10,11 +11,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdate;
@@ -22,7 +27,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
  * Created by Hanani on 24/4/2016.
@@ -57,7 +64,41 @@ public class MapFragment extends Fragment implements LocationListener{
         View rootView = inflater.inflate(R.layout.map_fragment, container, false);
         mapView = (MapView) rootView.findViewById(R.id.mapview);
         mapView.onCreate(savedInstanceState);
+        ilSearch = (TextInputLayout) rootView.findViewById(R.id.ilSearch);
+        etSearch = (EditText) rootView.findViewById(R.id.etSearch);
 
+        //hide keyboard
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        setupMap();
+
+        setupSearch();
+
+        return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        mapView.onResume();
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mapView.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapView.onLowMemory();
+    }
+
+    /**
+     * setup map view
+     */
+    private void setupMap(){
         // Gets to GoogleMap from the MapView and does initialization stuff
         map = mapView.getMap();
         map.getUiSettings().setMyLocationButtonEnabled(true);
@@ -80,34 +121,6 @@ public class MapFragment extends Fragment implements LocationListener{
         // Updates the location and zoom of the MapView
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(2.9234326,101.636846), 13);
         map.animateCamera(cameraUpdate);
-
-        //hide keyboard
-        getActivity().getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
-        );
-
-        ilSearch = (TextInputLayout) rootView.findViewById(R.id.ilSearch);
-        etSearch = (EditText) rootView.findViewById(R.id.etSearch);
-
-        return rootView;
-    }
-
-    @Override
-    public void onResume() {
-        mapView.onResume();
-        super.onResume();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mapView.onDestroy();
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        mapView.onLowMemory();
     }
 
     /**
@@ -162,5 +175,50 @@ public class MapFragment extends Fragment implements LocationListener{
 //        if (mGoogleApiClient != null) {
 //            LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
 //        }
+    }
+
+    /**
+     * setup search on map
+     */
+    private void setupSearch() {
+        etSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                InputMethodManager inputManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    String search = etSearch.getText().toString();
+                    if (search.equals("masjid")||search.equals("mosque")||search.equals("surau")) {
+                        ilSearch.setError(null);
+                        map.clear();
+                        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(2.9322861,101.6477198), 13);
+                        map.animateCamera(cameraUpdate);
+                        map.addMarker(new MarkerOptions()
+                                .position(new LatLng(2.9322861,101.6477198)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
+                                .title("Masjid Raja Haji Fisabilillah"));
+                        map.addMarker(new MarkerOptions().position(new LatLng(2.9243195,101.6430764)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
+                                .title("Masjid MMU Cyber"));
+                    } else if (search.equals("atm")||search.equals("bank")||search.equals("cdm")) {
+                        ilSearch.setError(null);
+                        map.clear();
+                        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(2.9255218,101.6419096), 13);
+                        map.animateCamera(cameraUpdate);
+                        map.addMarker(new MarkerOptions()
+                                .position(new LatLng(2.9255218,101.6419096)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
+                                .title("CIMB ATM & CDM"));
+                        map.addMarker(new MarkerOptions().position(new LatLng(2.9218074,101.6505248)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
+                                .title("Dpulze ATMs"));
+                        map.addMarker(new MarkerOptions().position(new LatLng(2.9211821,101.6560967)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
+                                .title("CIMB Bank"));
+                        map.addMarker(new MarkerOptions().position(new LatLng(2.921186, 101.655855)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
+                                .title("Maybank Bank"));
+                    } else {
+                        ilSearch.setError("Not Found");
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }

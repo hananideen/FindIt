@@ -23,6 +23,8 @@
             android:padding="8dp"
             android:id="@+id/etSearch"
             android:hint="Search Places"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
             android:windowSoftInputMode="stateHidden"
             android:singleLine="true"
             android:layout_gravity="center_horizontal|bottom" />
