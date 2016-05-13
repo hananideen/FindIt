@@ -2,6 +2,7 @@ package com.android.findit.Category;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -47,8 +48,11 @@ public class CategoryFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        //LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        // use a grid layout manager
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 4);
+        gridLayoutManager.setAutoMeasureEnabled(true);
+        mRecyclerView.setLayoutManager(gridLayoutManager);
 
         initializeData();
 
@@ -66,9 +70,11 @@ public class CategoryFragment extends Fragment {
         categories.add(new Category("Shopping Malls"));
         categories.add(new Category("Fresh Markets"));
         categories.add(new Category("Mosques"));
-        categories.add(new Category("Homestay"));
-        categories.add(new Category("Nursery"));
-        categories.add(new Category("Taylor"));
+        categories.add(new Category("Clinics"));
+        categories.add(new Category("Banks/ATMs"));
+        categories.add(new Category("Homestays"));
+        categories.add(new Category("Nurseries"));
+        categories.add(new Category("Tailors"));
         categories.add(new Category("Boutiques"));
         categories.add(new Category("Beauty Shops"));
     }
