@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.android.findit.Constant;
@@ -40,6 +42,7 @@ public class SubCategoryActivity extends AppCompatActivity {
                     onBackPressed();
                 }
             });
+            toolbar.inflateMenu(R.menu.menu_subcategory);
 
         }
 
@@ -61,7 +64,7 @@ public class SubCategoryActivity extends AppCompatActivity {
             mRecyclerView.setAdapter(mAdapter);
         }
     }
-
+    
     private void initializeData(){
         subCategories = new ArrayList<>();
         subCategories.add(new SubCategory("Hmph", "Oooo"));
