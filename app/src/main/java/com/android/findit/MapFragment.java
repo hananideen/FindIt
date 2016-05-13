@@ -193,26 +193,19 @@ public class MapFragment extends Fragment implements LocationListener{
                         map.clear();
                         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(2.9322861,101.6477198), 13);
                         map.animateCamera(cameraUpdate);
-                        map.addMarker(new MarkerOptions()
-                                .position(new LatLng(2.9322861,101.6477198)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
-                                .title("Masjid Raja Haji Fisabilillah"));
-                        map.addMarker(new MarkerOptions().position(new LatLng(2.9243195,101.6430764)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
-                                .title("Masjid MMU Cyber"));
+                        addMarker(new LatLng(2.9322861,101.6477198), "Masjid Raja Haji Fisabilillah");
+                        addMarker(new LatLng(2.9243195,101.6430764), "Masjid MMU Cyber");
                     } else if (search.equals("atm")||search.equals("bank")||search.equals("cdm")) {
                         ilSearch.setError(null);
                         map.clear();
                         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(2.9255218,101.6419096), 13);
                         map.animateCamera(cameraUpdate);
-                        map.addMarker(new MarkerOptions()
-                                .position(new LatLng(2.9255218,101.6419096)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
-                                .title("CIMB ATM & CDM"));
-                        map.addMarker(new MarkerOptions().position(new LatLng(2.9218074,101.6505248)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
-                                .title("Dpulze ATMs"));
-                        map.addMarker(new MarkerOptions().position(new LatLng(2.9211821,101.6560967)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
-                                .title("CIMB Bank"));
-                        map.addMarker(new MarkerOptions().position(new LatLng(2.921186, 101.655855)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
-                                .title("Maybank Bank"));
+                        addMarker(new LatLng(2.9255218,101.6419096), "CIMB ATM & CDM");
+                        addMarker(new LatLng(2.9218074,101.6505248), "Dpulze ATMs");
+                        addMarker(new LatLng(2.9211821,101.6560967), "CIMB Bank");
+                        addMarker(new LatLng(2.921186, 101.655855), "Maybank");
                     } else {
+                        map.clear();
                         ilSearch.setError("Not Found");
                     }
                     return true;
@@ -220,5 +213,15 @@ public class MapFragment extends Fragment implements LocationListener{
                 return false;
             }
         });
+    }
+
+    /**
+     * function to add marker on map
+     * @param latLng
+     * @param title
+     */
+    private void addMarker (LatLng latLng, String title){
+        map.addMarker(new MarkerOptions().position(latLng)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)).title(title));
     }
 }
