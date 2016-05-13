@@ -66,13 +66,15 @@ public class CategoryFragment extends Fragment {
     private void initializeData(){
         categories = new ArrayList<>();
         categories.add(new Category("Restaurants"));
-        categories.add(new Category("Gadgets"));
-        categories.add(new Category("Shopping Malls"));
         categories.add(new Category("Fresh Markets"));
+        categories.add(new Category("Shopping Malls"));
+        categories.add(new Category("Gadgets"));
         categories.add(new Category("Mosques"));
         categories.add(new Category("Clinics"));
         categories.add(new Category("Banks/ATMs"));
+        categories.add(new Category("Petrol Stations"));
         categories.add(new Category("Homestays"));
+        categories.add(new Category("Hotels"));
         categories.add(new Category("Nurseries"));
         categories.add(new Category("Tailors"));
         categories.add(new Category("Boutiques"));
