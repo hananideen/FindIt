@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.android.findit.Constant;
+import com.android.findit.Database;
 import com.android.findit.R;
 
 import java.util.ArrayList;
@@ -19,8 +20,6 @@ import java.util.List;
  * Created by Hanani on 11/5/2016.
  */
 public class SubCategoryActivity extends AppCompatActivity {
-
-    private List<SubCategory> subCategories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,21 +56,11 @@ public class SubCategoryActivity extends AppCompatActivity {
             LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.setLayoutManager(mLayoutManager);
 
-            initializeData();
+            Database.initializeSub();
 
             // specify an adapter (see also next example)
-            SubCategoryAdapter mAdapter = new SubCategoryAdapter(subCategories, this);
+            SubCategoryAdapter mAdapter = new SubCategoryAdapter(Database.subCategories, this);
             mRecyclerView.setAdapter(mAdapter);
         }
-    }
-    
-    private void initializeData(){
-        subCategories = new ArrayList<>();
-        subCategories.add(new SubCategory("Hmph", "Oooo"));
-        subCategories.add(new SubCategory("Huhu", "Aaaa"));
-        subCategories.add(new SubCategory("Hehe", "Hmph"));
-        subCategories.add(new SubCategory("Oooo", "Huhu"));
-        subCategories.add(new SubCategory("Aaaa", "Hehe"));
-
     }
 }

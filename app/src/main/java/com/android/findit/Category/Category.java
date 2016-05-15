@@ -9,7 +9,7 @@ public class Category {
     String categoryName;
     Drawable categoryIcon;
 
-    Category(String categoryName, Drawable categoryIcon) {
+    public Category(String categoryName, Drawable categoryIcon) {
         this.categoryName = categoryName;
         this.categoryIcon = categoryIcon;
     }

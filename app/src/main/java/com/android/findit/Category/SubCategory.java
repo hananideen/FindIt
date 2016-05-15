@@ -7,7 +7,7 @@ public class SubCategory {
 
     String categoryName, categoryDetails;
 
-    SubCategory(String categoryName, String categoryDetails) {
+    public SubCategory(String categoryName, String categoryDetails) {
         this.categoryName = categoryName;
         this.categoryDetails = categoryDetails;
     }
