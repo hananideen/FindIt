@@ -56,6 +56,10 @@
         <activity
             android:name=".Category.SubCategoryActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".Category.DetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
