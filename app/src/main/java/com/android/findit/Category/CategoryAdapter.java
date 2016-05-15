@@ -57,6 +57,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.tvCategory.setText(category.get(position).categoryName);
+        holder.ivCategory.setImageDrawable(category.get(position).categoryIcon);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

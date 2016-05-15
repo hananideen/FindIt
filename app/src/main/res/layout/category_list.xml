@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="90dp"
-    android:layout_height="130dp"
+    android:layout_height="120dp"
     android:clickable="true"
     android:layout_margin="5dp"
     android:id="@+id/cardView"
@@ -16,14 +16,14 @@
 
         <ImageView
             android:id="@+id/ivCategory"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingTop="8dp"
+            android:layout_marginTop="8dp"
             android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/tvCategory"
