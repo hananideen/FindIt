@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.android.findit.Constant;
 import com.android.findit.R;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -16,8 +17,8 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         if(toolbar!=null){
+            toolbar.setTitle(getIntent().getStringExtra(Constant.NAME));
             // home tap goes back
             toolbar.setNavigationIcon(R.drawable.ic_back);
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {

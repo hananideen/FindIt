@@ -64,7 +64,7 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailsActivity.class);
-                //intent.putExtra(Constant.CATEGORY, subCategory.get(position).categoryName);
+                intent.putExtra(Constant.NAME, subCategory.get(position).categoryName);
                 context.startActivity(intent);
             }
         });

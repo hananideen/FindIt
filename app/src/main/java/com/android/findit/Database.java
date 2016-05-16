@@ -47,11 +47,11 @@ public class Database {
 
     public static void initializeSub(){
         subCategories = new ArrayList<>();
-        subCategories.add(new SubCategory("Hmph", "Oooo"));
-        subCategories.add(new SubCategory("Huhu", "Aaaa"));
-        subCategories.add(new SubCategory("Hehe", "Hmph"));
-        subCategories.add(new SubCategory("Oooo", "Huhu"));
-        subCategories.add(new SubCategory("Aaaa", "Hehe"));
+        subCategories.add(new SubCategory("Place 1", "Description"));
+        subCategories.add(new SubCategory("Place 2", "Description"));
+        subCategories.add(new SubCategory("Place 3", "Description"));
+        subCategories.add(new SubCategory("Place 4", "Description"));
+        subCategories.add(new SubCategory("Place 5", "Description"));
 
     }
 }
