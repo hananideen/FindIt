@@ -1,5 +1,7 @@
 package com.android.findit.Category;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -30,11 +32,20 @@ public class DetailsActivity extends AppCompatActivity {
         }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Map", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-        });
+        if (fab!=null){
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String uri = "http://maps.google.com/maps?q=loc:2.9243195,101.6430764";
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                    intent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+                    intent.setData(Uri.parse(uri));
+                    startActivity(intent);
+
+                }
+            });
+        }
+
     }
 }

@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.android.findit.Constant;
 import com.android.findit.Database;
@@ -42,6 +43,16 @@ public class SubCategoryActivity extends AppCompatActivity {
                 }
             });
             toolbar.inflateMenu(R.menu.menu_subcategory);
+            toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    int id = item.getItemId();
+                    if (id == R.id.action_filter) {
+                        Toast.makeText(SubCategoryActivity.this, "Filter", Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+            });
 
         }
 
