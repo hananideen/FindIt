@@ -58,7 +58,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Category.DetailsActivity"
-            android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
