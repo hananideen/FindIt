@@ -63,9 +63,9 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(context, SubCategoryActivity.class);
-//                intent.putExtra(Constant.CATEGORY, subCategory.get(position).categoryName);
-//                context.startActivity(intent);
+                Intent intent = new Intent(context, DetailsActivity.class);
+                //intent.putExtra(Constant.CATEGORY, subCategory.get(position).categoryName);
+                context.startActivity(intent);
             }
         });
     }
