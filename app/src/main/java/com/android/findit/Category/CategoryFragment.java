@@ -2,21 +2,16 @@ package com.android.findit.Category;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.findit.Constant;
-import com.android.findit.Database;
+import com.android.findit.Helper.Constant;
+import com.android.findit.Helper.Database;
 import com.android.findit.R;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.android.findit.Helper.Utils;
 
 /**
  * Created by Hanani on 24/4/2016.
@@ -51,9 +46,12 @@ public class CategoryFragment extends Fragment {
         // use a linear layout manager
         //LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         // use a grid layout manager
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 4);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
         gridLayoutManager.setAutoMeasureEnabled(true);
         mRecyclerView.setLayoutManager(gridLayoutManager);
+        // set grid columns after calculating columns from screen width and cell width
+        gridLayoutManager.setSpanCount((int) Math.max(1, Utils.getDeviceWidth(getActivity()) / (getResources().getDimension(R.dimen.category_item_width)-20)));
+
 
         Database.initializeCategories(getResources());
 
