@@ -1,6 +1,8 @@
 package com.android.findit.Category;
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +20,7 @@ import com.android.findit.R;
  */
 public class SubCategoryActivity extends AppCompatActivity {
 
+    private CoordinatorLayout view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,7 @@ public class SubCategoryActivity extends AppCompatActivity {
 
         String name = getIntent().getStringExtra(Constant.CATEGORY);
 
+        view = (CoordinatorLayout) findViewById(R.id.subCategory_view);
         // setup toolbar if found in layout
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         if(toolbar!=null){
@@ -44,7 +48,10 @@ public class SubCategoryActivity extends AppCompatActivity {
                 public boolean onMenuItemClick(MenuItem item) {
                     int id = item.getItemId();
                     if (id == R.id.action_filter) {
-                        Toast.makeText(SubCategoryActivity.this, "Filter", Toast.LENGTH_SHORT).show();
+                        if (view!=null)
+                            Snackbar.make(view, "Filter", Snackbar.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(SubCategoryActivity.this, "Filter", Toast.LENGTH_SHORT).show();
                     }
                     return true;
                 }
