@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.findit.Constant;
+import com.android.findit.Helper.Constant;
 import com.android.findit.R;
 
 import java.util.List;

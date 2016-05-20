@@ -1,9 +1,10 @@
-package com.android.findit;
+package com.android.findit.Helper;
 
 import android.content.res.Resources;
 
 import com.android.findit.Category.Category;
 import com.android.findit.Category.SubCategory;
+import com.android.findit.R;
 
 import java.util.ArrayList;
 import java.util.List;

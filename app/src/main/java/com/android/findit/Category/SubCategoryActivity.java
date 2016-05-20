@@ -5,17 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.android.findit.Constant;
-import com.android.findit.Database;
+import com.android.findit.Helper.Constant;
+import com.android.findit.Helper.Database;
 import com.android.findit.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Hanani on 11/5/2016.

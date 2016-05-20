@@ -1,4 +1,4 @@
-package com.android.findit;
+package com.android.findit.Helper;
 
 /**
  * Created by Hanani on 11/5/2016.

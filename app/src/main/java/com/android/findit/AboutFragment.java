@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.android.findit.Helper.Constant;
+
 /**
  * Created by Hanani on 24/4/2016.
  */
