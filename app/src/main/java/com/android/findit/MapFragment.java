@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.findit.Helper.Constant;
@@ -72,6 +73,15 @@ public class MapFragment extends Fragment implements LocationListener{
         setupMap();
 
         setupSearch();
+
+        // Get the button view
+        View locationButton = ((View) mapView.findViewById(1).getParent()).findViewById(2);
+        // and next place it, for exemple, on bottom right (as Google Maps app)
+        RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams)     locationButton.getLayoutParams();
+        // position on right bottom
+        rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
+        rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
+        rlp.setMargins(0, 0, 200, 200);
 
         return rootView;
     }
