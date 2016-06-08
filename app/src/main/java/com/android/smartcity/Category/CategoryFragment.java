@@ -1,4 +1,4 @@
-package com.android.findit.Category;
+package com.android.smartcity.Category;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,10 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.findit.Helper.Constant;
-import com.android.findit.Helper.Database;
-import com.android.findit.R;
-import com.android.findit.Helper.Utils;
+import com.android.smartcity.Helper.Constant;
+import com.android.smartcity.Helper.Database;
+import com.android.smartcity.R;
+import com.android.smartcity.Helper.Utils;
 
 /**
  * Created by Hanani on 24/4/2016.

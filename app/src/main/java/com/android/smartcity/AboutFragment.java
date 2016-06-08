@@ -1,4 +1,4 @@
-package com.android.findit;
+package com.android.smartcity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.android.findit.Helper.Constant;
+import com.android.smartcity.Helper.Constant;
 
 /**
  * Created by Hanani on 24/4/2016.

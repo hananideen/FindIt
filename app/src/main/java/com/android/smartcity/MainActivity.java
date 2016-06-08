@@ -1,4 +1,4 @@
-package com.android.findit;
+package com.android.smartcity;
 
 import android.content.Context;
 import android.os.Build;
@@ -14,12 +14,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
-import com.android.findit.Category.CategoryFragment;
+import com.android.smartcity.Category.CategoryFragment;
 
 public class MainActivity extends AppCompatActivity {
 

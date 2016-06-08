@@ -1,4 +1,4 @@
-package com.android.findit;
+package com.android.smartcity;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -20,7 +20,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.android.findit.Helper.Constant;
+import com.android.smartcity.Helper.Constant;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;

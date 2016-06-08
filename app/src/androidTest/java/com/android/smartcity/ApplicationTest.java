@@ -1,4 +1,4 @@
-package com.android.findit;
+package com.android.smartcity;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

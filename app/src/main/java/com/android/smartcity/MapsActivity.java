@@ -1,4 +1,4 @@
-package com.android.findit;
+package com.android.smartcity;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;

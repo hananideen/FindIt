@@ -1,4 +1,4 @@
-package com.android.findit.Helper;
+package com.android.smartcity.Helper;
 
 import android.app.Activity;
 import android.graphics.Point;

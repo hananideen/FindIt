@@ -1,4 +1,4 @@
-package com.android.findit.Category;
+package com.android.smartcity.Category;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,8 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.android.findit.Helper.Constant;
-import com.android.findit.R;
+import com.android.smartcity.Helper.Constant;
+import com.android.smartcity.R;
 
 public class DetailsActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.android.findit.Category;
+package com.android.smartcity.Category;
 
 import android.graphics.drawable.Drawable;
 

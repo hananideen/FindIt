@@ -1,4 +1,4 @@
-package com.android.findit.Category;
+package com.android.smartcity.Category;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.findit.Helper.Constant;
-import com.android.findit.R;
+import com.android.smartcity.Helper.Constant;
+import com.android.smartcity.R;
 
 import java.util.List;
 
