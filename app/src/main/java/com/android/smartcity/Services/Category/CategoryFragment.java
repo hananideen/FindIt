@@ -1,4 +1,4 @@
-package com.android.smartcity.Category;
+package com.android.smartcity.Services.Category;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

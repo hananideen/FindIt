@@ -1,4 +1,4 @@
-package com.android.smartcity;
+package com.android.smartcity.Services;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -21,6 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.smartcity.Helper.Constant;
+import com.android.smartcity.R;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;

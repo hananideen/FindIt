@@ -5,4 +5,4 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.smartcity.MapsActivity" />
+    tools:context=".Services.MapsActivity" />

@@ -1,4 +1,4 @@
-package com.android.smartcity.Category;
+package com.android.smartcity.Services.Category;
 
 /**
  * Created by Hanani on 11/5/2016.

@@ -18,7 +18,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
-import com.android.smartcity.Category.CategoryFragment;
+import com.android.smartcity.Services.Category.CategoryFragment;
+import com.android.smartcity.Services.MapFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -120,8 +121,6 @@ public class MainActivity extends AppCompatActivity {
                     return MapFragment.newInstance(position);
                 case 1:
                     return CategoryFragment.newInstance(position);
-                case 2:
-                    return AboutFragment.newInstance(position);
             }
             return null;
         }
@@ -139,8 +138,6 @@ public class MainActivity extends AppCompatActivity {
                     return "Map View";
                 case 1:
                     return "Categories";
-                case 2:
-                    return "About";
             }
             return null;
         }

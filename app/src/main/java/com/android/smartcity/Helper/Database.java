@@ -2,8 +2,8 @@ package com.android.smartcity.Helper;
 
 import android.content.res.Resources;
 
-import com.android.smartcity.Category.Category;
-import com.android.smartcity.Category.SubCategory;
+import com.android.smartcity.Services.Category.Category;
+import com.android.smartcity.Services.Category.SubCategory;
 import com.android.smartcity.R;
 
 import java.util.ArrayList;

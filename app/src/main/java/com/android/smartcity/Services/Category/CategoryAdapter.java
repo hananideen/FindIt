@@ -1,4 +1,4 @@
-package com.android.smartcity.Category;
+package com.android.smartcity.Services.Category;
 
 import android.content.Context;
 import android.content.Intent;
