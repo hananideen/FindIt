@@ -18,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import com.android.smartcity.Helper.Constant;
 import com.android.smartcity.Services.Category.CategoryFragment;
 import com.android.smartcity.Services.MapFragment;
 
@@ -121,6 +122,12 @@ public class MainActivity extends AppCompatActivity {
                     return MapFragment.newInstance(position);
                 case 1:
                     return CategoryFragment.newInstance(position);
+                case 2:
+                    return EmptyFragment.newInstance(position);
+                case 3:
+                    return EmptyFragment.newInstance(position);
+                case 4:
+                    return EmptyFragment.newInstance(position);
             }
             return null;
         }
@@ -128,16 +135,22 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show total pages.
-            return 2;
+            return 5;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Map View";
+                    return Constant.NAME_MAP;
                 case 1:
-                    return "Categories";
+                    return Constant.NAME_CATEGORIES;
+                case 2:
+                    return Constant.NAME_OPPORTUNITIES;
+                case 3:
+                    return Constant.NAME_ACCOMMODATION;
+                case 4:
+                    return Constant.NAME_EVENTS;
             }
             return null;
         }
