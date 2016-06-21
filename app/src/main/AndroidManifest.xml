@@ -59,6 +59,9 @@
         <activity
             android:name=".Services.Category.DetailsActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

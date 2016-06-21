@@ -1,6 +1,7 @@
 package com.android.smartcity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -119,7 +120,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_about) {
             Snackbar.make(drawer, "About Us Coming Soon", Snackbar.LENGTH_LONG).show();
         } else if (id == R.id.nav_feedback) {
-            Snackbar.make(drawer, "Feedback Coming Soon", Snackbar.LENGTH_LONG).show();
+            //Snackbar.make(drawer, "Feedback Coming Soon", Snackbar.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, SplashScreen.class);
+            startActivity(intent);
         }
 
         drawer.closeDrawer(GravityCompat.START);
