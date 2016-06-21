@@ -120,9 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_about) {
             Snackbar.make(drawer, "About Us Coming Soon", Snackbar.LENGTH_LONG).show();
         } else if (id == R.id.nav_feedback) {
-            //Snackbar.make(drawer, "Feedback Coming Soon", Snackbar.LENGTH_LONG).show();
-            Intent intent = new Intent(MainActivity.this, SplashScreen.class);
-            startActivity(intent);
+            Snackbar.make(drawer, "Feedback Coming Soon", Snackbar.LENGTH_LONG).show();
         }
 
         drawer.closeDrawer(GravityCompat.START);
