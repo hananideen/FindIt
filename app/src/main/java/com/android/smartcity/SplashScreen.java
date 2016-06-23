@@ -27,7 +27,7 @@ public class SplashScreen extends AwesomeSplash {
         }
         //Customize Circular Reveal
         configSplash.setBackgroundColor(R.color.colorPrimary); //any color you want form colors.xml
-        configSplash.setAnimCircularRevealDuration(2000); //int ms
+        configSplash.setAnimCircularRevealDuration(500); //int ms
         configSplash.setRevealFlagX(Flags.REVEAL_RIGHT);  //or Flags.REVEAL_LEFT
         configSplash.setRevealFlagY(Flags.REVEAL_BOTTOM); //or Flags.REVEAL_TOP
 
@@ -35,7 +35,7 @@ public class SplashScreen extends AwesomeSplash {
 
         //Customize Logo
         configSplash.setLogoSplash(R.mipmap.ic_launcher); //or any other drawable
-        configSplash.setAnimLogoSplashDuration(2000); //int ms
+        configSplash.setAnimLogoSplashDuration(1000); //int ms
         configSplash.setAnimLogoSplashTechnique(Techniques.Bounce); //choose one form Techniques (ref: https://github.com/daimajia/AndroidViewAnimations)
 
 
@@ -43,10 +43,10 @@ public class SplashScreen extends AwesomeSplash {
         configSplash.setPathSplash(Constant.SVG_PATH); //set path String
         configSplash.setOriginalHeight(72); //in relation to your svg (path) resource
         configSplash.setOriginalWidth(72); //in relation to your svg (path) resource
-        configSplash.setAnimPathStrokeDrawingDuration(3000);
+        configSplash.setAnimPathStrokeDrawingDuration(1000);
         configSplash.setPathSplashStrokeSize(5); //I advise value be <5
         configSplash.setPathSplashStrokeColor(R.color.androidOutline); //any color you want form colors.xml
-        configSplash.setAnimPathFillingDuration(3000);
+        configSplash.setAnimPathFillingDuration(500);
         configSplash.setPathSplashFillColor(R.color.android); //path object filling color
 
 
@@ -54,7 +54,7 @@ public class SplashScreen extends AwesomeSplash {
         configSplash.setTitleSplash("Smart City");
         configSplash.setTitleTextColor(R.color.android);
         configSplash.setTitleTextSize(30f); //float value
-        configSplash.setAnimTitleDuration(3000);
+        configSplash.setAnimTitleDuration(1000);
         configSplash.setAnimTitleTechnique(Techniques.SlideInUp);
         configSplash.setTitleFont("fonts/streatwear.otf"); //provide string to your font located in assets/fonts/
 
@@ -65,7 +65,7 @@ public class SplashScreen extends AwesomeSplash {
         Thread timerThread = new Thread(){
             public void run(){
                 try{
-                    sleep(1500);
+                    sleep(1000);
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }finally{
